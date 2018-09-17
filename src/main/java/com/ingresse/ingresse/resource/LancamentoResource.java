@@ -33,7 +33,7 @@ public class LancamentoResource {
 
 	@GetMapping
 	public Iterable<Lancamento> listarTodos() {
-		return lancamentoService.findAll();
+		return lancamentoService.listarTodos();
 	}
 
 	@GetMapping("/{id}")

@@ -1,7 +1,5 @@
 package com.ingresse.ingresse.resource;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -20,15 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ingresse.ingresse.event.RecursoCriadoEvent;
 import com.ingresse.ingresse.model.Categoria;
-import com.ingresse.ingresse.repository.CategoriaRepositoy;
 import com.ingresse.ingresse.service.CategoriaService;
 
 @RestController
 @RequestMapping("/categoria")
 public class CategoriaResource {
-
-	@Autowired
-	private CategoriaRepositoy categoriaRepositoy;
 
 	@Autowired
 	private CategoriaService categoriaService;
@@ -37,8 +31,8 @@ public class CategoriaResource {
 	private ApplicationEventPublisher publisher;
 
 	@GetMapping
-	public List<Categoria> listarTodos() {
-		return categoriaRepositoy.findAll();
+	public Iterable<Categoria> listarTodos() {
+		return categoriaService.listarTodos();
 	}
 
 	@GetMapping("/{id}")

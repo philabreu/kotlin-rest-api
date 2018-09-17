@@ -23,7 +23,4 @@ public class Endereco {
 	@Setter
 	@Size(max = 30)
 	private String estado;
-
-	
-	
 }

@@ -31,7 +31,6 @@ public class PessoaService {
 	public Pessoa atualizar(Pessoa pessoa, Long id) {
 		Pessoa pessoaSalva = buscarPorId(id);
 
-		//TODO: VERIFICAR PORQUE NÃO ATUALIZA O ENDERECO
 		BeanUtils.copyProperties(pessoa, pessoaSalva, "id");
 
 		return pessoaRepository.save(pessoaSalva);
@@ -40,5 +39,9 @@ public class PessoaService {
 	public void remover(Long id) {
 		Pessoa pessoaBuscada = buscarPorId(id);
 		pessoaRepository.delete(pessoaBuscada);
+	}
+
+	public Iterable<Pessoa> listarTodos() {
+		return pessoaRepository.findAll();
 	}
 }

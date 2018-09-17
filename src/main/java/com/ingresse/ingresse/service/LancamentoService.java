@@ -19,7 +19,7 @@ public class LancamentoService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 
-	public Iterable<Lancamento> findAll() {
+	public Iterable<Lancamento> listarTodos() {
 		return lancamentoRepository.findAll();
 	}
 

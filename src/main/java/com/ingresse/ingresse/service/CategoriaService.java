@@ -6,13 +6,17 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.ingresse.ingresse.model.Categoria;
-import com.ingresse.ingresse.repository.CategoriaRepositoy;
+import com.ingresse.ingresse.repository.CategoriaRepository;
 
 @Service
 public class CategoriaService {
 
 	@Autowired
-	private CategoriaRepositoy categoriaRepository;
+	private CategoriaRepository categoriaRepository;
+
+	public Iterable<Categoria> listarTodos() {
+		return categoriaRepository.findAll();
+	}
 
 	public Categoria criar(Categoria categoria) {
 		return categoriaRepository.save(categoria);
@@ -35,4 +39,5 @@ public class CategoriaService {
 
 		return categoriaRepository.save(categoriaSalva);
 	}
+
 }

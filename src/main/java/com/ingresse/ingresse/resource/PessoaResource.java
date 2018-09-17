@@ -1,7 +1,5 @@
 package com.ingresse.ingresse.resource;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -21,15 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ingresse.ingresse.event.RecursoCriadoEvent;
 import com.ingresse.ingresse.model.Pessoa;
-import com.ingresse.ingresse.repository.PessoaRepository;
 import com.ingresse.ingresse.service.PessoaService;
 
 @RestController
 @RequestMapping("/pessoa")
 public class PessoaResource {
-
-	@Autowired
-	private PessoaRepository pessoaRepository;
 
 	@Autowired
 	private PessoaService pessoaService;
@@ -38,8 +32,8 @@ public class PessoaResource {
 	private ApplicationEventPublisher publisher;
 
 	@GetMapping
-	public List<Pessoa> listarTodos() {
-		return pessoaRepository.findAll();
+	public Iterable<Pessoa> listarTodos() {
+		return pessoaService.listarTodos();
 	}
 
 	@GetMapping("/{id}")
