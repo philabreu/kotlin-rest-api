@@ -22,8 +22,8 @@ INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, obser
 INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Clube', '2017-03-10', '2017-03-10', 400.32, null, 'DESPESA', 6, 11);
 INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Impostos', '2017-06-10', null, 123.64, 'Multas', 'DESPESA', 6, 10);
 INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Multa', '2017-04-10', '2017-04-10', 665.33, null, 'DESPESA', 5, 9);
-INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Lucro ações', '2017-06-10', null, 8.32, null, 'RECEITA', 1, 8);
-INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Papelaria', '2017-04-10', '2017-04-10', 2100.32, null, 'DESPESA', 2, 7);
-INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Almoço', '2017-06-10', null, 1040.32, null, 'DESPESA', 3, 6);
-INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Café', '2017-04-10', '2017-04-10', 4.32, null, 'DESPESA', 4, 5);
-INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Dividendos', '2017-06-10', null, 10.20, null, 'RECEITA', 5, 4);
+INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Lucro ações', '2017-06-10', null, 8.32, null, 'RECEITA', 4, 8);
+INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Papelaria', '2017-04-10', '2017-04-10', 2100.32, null, 'DESPESA', 3, 7);
+INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Almoço', '2017-06-10', null, 1040.32, null, 'DESPESA', 2, 6);
+INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Café', '2017-04-10', '2017-04-10', 4.32, null, 'DESPESA', 1, 5);
+INSERT INTO lancamento (descricao, data_vencimento, data_pagamento, valor, observacao, tipo_lancamento, categoria_id, pessoa_id) values ('Dividendos', '2017-06-10', null, 10.20, null, 'RECEITA', 1, 4);

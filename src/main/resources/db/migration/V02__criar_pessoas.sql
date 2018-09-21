@@ -17,3 +17,4 @@ INSERT INTO pessoa (nome , bairro,  cidade, estado, ativo) values ('Henrique Med
 INSERT INTO pessoa (nome , bairro,  cidade, estado, ativo) values ('Carlos Santana', 	'Pampulha',   'Belo Horizonte', 'MG', true);
 INSERT INTO pessoa (nome , bairro,  cidade, estado, ativo) values ('Leonardo Oliveira', 'Carlos Prates' ,  'Uberlândia', 'MG', true);
 INSERT INTO pessoa (nome , bairro,  cidade, estado, ativo) values ('Isabela Martins',   'Vigilato', 'Manaus', 'AM', true);
+INSERT INTO pessoa (nome , bairro,  cidade, estado, ativo) values ('Alda Ferreira',   'Brotas', 'Salvador', 'BA', true);
