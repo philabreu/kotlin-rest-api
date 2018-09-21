@@ -51,18 +51,11 @@ public class CategoriaService {
 	public void remover(Long id) {
 		Categoria categoriaBuscada = buscarPorId(id);
 
-		List<Lancamento> listaLancamentos = lancamentoRepository.findAll();
-		listaLancamentos.forEach(cadaLancamento -> {
+		lancamentoRepository.findAll().stream().forEach(cadaLancamento -> {
 			if (cadaLancamento.getCategoria().getId().equals(categoriaBuscada.getId())) {
-				throw new RuntimeException("Categoria não pode ser excluída pois pertence a um lancamento");
+				throw new RuntimeException("Categoria não pode ser excluída pois pertence a um lançamento.");
 			}
 		});
-
-		/*lancamentoRepository.findAll().stream().forEach(cadaLancamento -> {
-			if (cadaLancamento.getCategoria().getId().equals(categoriaBuscada.getId())) {
-				throw new RuntimeException("Categoria não pode ser excluída pois pertence a um lancamento");
-			}
-		});*/
 
 		categoriaRepository.delete(categoriaBuscada);
 

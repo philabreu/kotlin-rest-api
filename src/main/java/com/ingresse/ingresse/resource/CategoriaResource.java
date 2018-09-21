@@ -65,6 +65,5 @@ public class CategoriaResource {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long id) {
 		categoriaService.remover(id);
-		
 	}
 }
