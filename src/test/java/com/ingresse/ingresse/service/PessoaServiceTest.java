@@ -33,6 +33,7 @@ public class PessoaServiceTest {
 		Assert.assertTrue(!pessoasList.isEmpty());
 	}
 
+	@Test
 	public void testBuscarPorId() {
 		Pessoa pessoa = this.pessoaService.buscarPorId(4L);
 
