@@ -1,15 +1,13 @@
-# ingresse-api-spring
+# Preset:
+1.Install mysql with username / password = root (check in application.yml file)
 
-Preset:
 
-	Install mysql with username / password = root (check in application.yml file)
+# Run as standalone application:
+2.execute commands
 
-Run as standalone application:
+	mvn clean install (only the first time)
+	mvn spring-boot: run
 
-	execute command mvn spring-boot: run
-
-Run with jenkins:
-
-	Install plugin cobertura
-
-	Create job project maven, with code management in github, with goal maven cobertura:cobertura
+# Run with jenkins:
+3.Install plugin cobertura
+4.Create job project maven, with code management in github, with goal maven cobertura:cobertura
