@@ -1,15 +1,11 @@
 package com.ingresse.ingresse.service;
 
-import java.util.Iterator;
-import java.util.List;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.ingresse.ingresse.model.Categoria;
-import com.ingresse.ingresse.model.Lancamento;
 import com.ingresse.ingresse.repository.CategoriaRepository;
 import com.ingresse.ingresse.repository.LancamentoRepository;
 
