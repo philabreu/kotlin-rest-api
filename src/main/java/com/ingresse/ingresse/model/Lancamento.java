@@ -73,7 +73,7 @@ public class Lancamento implements Serializable {
 	@Getter
 	@Setter
 	@NotNull
-	private Categoria categoria;
+	private Category category;
 
 	@ManyToOne
 	@JoinColumn(name = "pessoa_id")

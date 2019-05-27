@@ -19,21 +19,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ingresse.ingresse.model.Categoria;
-import com.ingresse.ingresse.repository.CategoriaRepository;
+import com.ingresse.ingresse.model.Category;
+import com.ingresse.ingresse.repository.CategoryRepository;
 
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 public class CategoriaServiceTest {
 
 	@Autowired
-	private CategoriaService categoriaService;
+	private CategoryService categoryService;
 
 	@InjectMocks
-	private CategoriaService categoriaMock;
+	private CategoryService categoriaMock;
 
 	@Mock
-	private CategoriaRepository categoriaRepository;
+	private CategoryRepository categoryRepository;
 
 	@Before
 	public void init() throws Exception {
@@ -42,7 +42,7 @@ public class CategoriaServiceTest {
 
 	@Test
 	public void testListarTodos() {
-		List<Categoria> categoriasList = (List<Categoria>) this.categoriaService.listarTodos();
+		List<Category> categoriasList = (List<Category>) this.categoryService.findAll();
 
 		Assert.assertNotNull(categoriasList);
 		Assert.assertTrue(categoriasList.size() > 0);
@@ -51,18 +51,18 @@ public class CategoriaServiceTest {
 
 	@Test
 	public void testBuscarPorId() {
-		Categoria categoria = this.categoriaService.buscarPorId(1L);
+		Category category = this.categoryService.findOne(1L);
 
-		Assert.assertNotNull(categoria);
-		Assert.assertTrue(categoria.getId() == 1L);
+		Assert.assertNotNull(category);
+		Assert.assertTrue(category.getId() == 1L);
 	}
 
 	@Test
 	public void testCriar() {
-		Categoria categoria = new Categoria();
+		Category category = new Category();
 
-		when(categoriaRepository.save(any(Categoria.class))).thenReturn(new Categoria());
-		Assert.assertThat(categoriaMock.criar(categoria), is(notNullValue()));
-		Assert.assertThat(categoriaMock.criar(categoria), equalTo(categoria));
+		when(categoryRepository.save(any(Category.class))).thenReturn(new Category());
+		Assert.assertThat(categoriaMock.save(category), is(notNullValue()));
+		Assert.assertThat(categoriaMock.save(category), equalTo(category));
 	}
 }

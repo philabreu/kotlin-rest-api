@@ -15,7 +15,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "categoria")
-public class Categoria implements Serializable {
+public class Category implements Serializable {
 
 	private static final long serialVersionUID = 1684903513806854826L;
 
@@ -47,7 +47,7 @@ public class Categoria implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Categoria other = (Categoria) obj;
+		Category other = (Category) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

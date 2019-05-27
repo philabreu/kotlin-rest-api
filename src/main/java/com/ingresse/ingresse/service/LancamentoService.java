@@ -7,24 +7,24 @@ import org.springframework.stereotype.Service;
 
 import com.ingresse.ingresse.model.Lancamento;
 import com.ingresse.ingresse.model.Pessoa;
-import com.ingresse.ingresse.repository.LancamentoRepository;
+import com.ingresse.ingresse.repository.EntryRepository;
 import com.ingresse.ingresse.repository.PessoaRepository;
 
 @Service
 public class LancamentoService {
 
 	@Autowired
-	private LancamentoRepository lancamentoRepository;
+	private EntryRepository entryRepository;
 
 	@Autowired
 	private PessoaRepository pessoaRepository;
 
 	public Iterable<Lancamento> listarTodos() {
-		return lancamentoRepository.findAll();
+		return entryRepository.findAll();
 	}
 
 	public Lancamento buscarPorId(Long id) {
-		Lancamento lancamentoBuscado = lancamentoRepository.findOne(id);
+		Lancamento lancamentoBuscado = entryRepository.findOne(id);
 
 		if (lancamentoBuscado == null) {
 			throw new EmptyResultDataAccessException(1);
@@ -36,7 +36,7 @@ public class LancamentoService {
 	public Lancamento criar(Lancamento lancamento) {
 		validarPessoa(lancamento);
 
-		return lancamentoRepository.save(lancamento);
+		return entryRepository.save(lancamento);
 	}
 
 	public Lancamento atualizar(Lancamento lancamento, Long id) {
@@ -47,12 +47,12 @@ public class LancamentoService {
 		}
 		BeanUtils.copyProperties(lancamento, lancamentoCriado, "id");
 
-		return lancamentoRepository.save(lancamentoCriado);
+		return entryRepository.save(lancamentoCriado);
 	}
 
 	public void remover(Long id) {
 		Lancamento lancamentoBuscado = buscarPorId(id);
-		lancamentoRepository.delete(lancamentoBuscado);
+		entryRepository.delete(lancamentoBuscado);
 	}
 
 	private void validarPessoa(Lancamento lancamento) {

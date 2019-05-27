@@ -3,9 +3,9 @@ package com.ingresse.ingresse.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ingresse.ingresse.model.Lancamento;
+import com.ingresse.ingresse.model.Category;
 
 @Repository
-public interface LancamentoRepository extends JpaRepository<Lancamento, Long> {
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 
 }

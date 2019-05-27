@@ -6,7 +6,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.ingresse.ingresse.model.Pessoa;
-import com.ingresse.ingresse.repository.LancamentoRepository;
+import com.ingresse.ingresse.repository.EntryRepository;
 import com.ingresse.ingresse.repository.PessoaRepository;
 
 @Service
@@ -16,7 +16,7 @@ public class PessoaService {
 	private PessoaRepository pessoaRepository;
 	
 	@Autowired
-	private LancamentoRepository lancamentoRepository;
+	private EntryRepository entryRepository;
 
 	public Pessoa buscarPorId(Long id) {
 		Pessoa pessoaBuscada = pessoaRepository.findOne(id);
@@ -43,7 +43,7 @@ public class PessoaService {
 	public void remover(Long id) {
 		Pessoa pessoaBuscada = buscarPorId(id);
 		
-		lancamentoRepository.findAll().stream().forEach(lancamento -> {
+		entryRepository.findAll().stream().forEach(lancamento -> {
 			if(lancamento.getPessoa().getId().equals(pessoaBuscada.getId())) {
 				throw new RuntimeException("pessoa não pode ser excluída pois pertence a um lançamento.");
 			}
