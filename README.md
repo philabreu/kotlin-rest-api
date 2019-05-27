@@ -10,4 +10,5 @@
 
 # Run with jenkins:
 3.Install plugin cobertura
+
 4.Create job project maven, with code management in github, with goal maven cobertura:cobertura
