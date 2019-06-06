@@ -1,4 +1,6 @@
-package com.ingresse.ingresse.resource;
+package com.ingresse.ingresse.endpoint;
+
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -27,7 +29,7 @@ import com.ingresse.ingresse.model.Category;
 import com.ingresse.ingresse.service.CategoryService;
 
 @RestController
-@RequestMapping("/categoria")
+@RequestMapping("/category")
 public class CategoryEndpoint {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(CategoryEndpoint.class);
@@ -39,10 +41,12 @@ public class CategoryEndpoint {
 	private ApplicationEventPublisher publisher;
 
 	@GetMapping
-	public Iterable<Category> findAll() {
+	public ResponseEntity<?> findAll() {
 		LOGGER.debug("calling findAll method in CategoryEndpoint:");
 		try {
-			return categoryService.findAll();
+			List<Category> categoryList =  categoryService.findAll();
+			
+			return ResponseEntity.ok(categoryList);
 		} catch (HttpClientErrorException e) {
 			LOGGER.error(ExceptionUtils.getStackTrace(e));
 			LOGGER.error(ExceptionUtils.getRootCauseMessage(e));
@@ -55,7 +59,7 @@ public class CategoryEndpoint {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Category> findOne(@PathVariable Long id) {
+	public ResponseEntity<?> findOne(@PathVariable Long id) {
 		LOGGER.debug("calling findOne method in CategoryEndpoint:");
 		try {
 			Category categoriaBuscada = categoryService.findOne(id);
@@ -74,7 +78,7 @@ public class CategoryEndpoint {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<Category> save(@Valid @RequestBody Category category, HttpServletResponse response) {
+	public ResponseEntity<?> save(@Valid @RequestBody Category category, HttpServletResponse response) {
 		LOGGER.debug("calling save method in CategoryEndpoint:");
 		try {
 			Category categoriaCriada = categoryService.save(category);

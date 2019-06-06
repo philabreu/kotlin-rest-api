@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ingresse.ingresse.model.Pessoa;
-import com.ingresse.ingresse.repository.PessoaRepository;
+import com.ingresse.ingresse.repository.PersonRepository;
 
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -32,7 +32,7 @@ public class PessoaServiceTest {
 	private PessoaService pessoaMock;
 
 	@Mock
-	private PessoaRepository pessoaRepository;
+	private PersonRepository personRepository;
 
 	@Before
 	public void init() throws Exception {
@@ -60,7 +60,7 @@ public class PessoaServiceTest {
 	public void testCriar() {
 		Pessoa pessoa = new Pessoa();
 
-		when(pessoaRepository.save(any(Pessoa.class))).thenReturn(new Pessoa());
+		when(personRepository.save(any(Pessoa.class))).thenReturn(new Pessoa());
 		Assert.assertThat(pessoaMock.criar(pessoa), is(notNullValue()));
 	}
 }

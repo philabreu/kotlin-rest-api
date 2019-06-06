@@ -1,4 +1,4 @@
-package com.ingresse.ingresse.resource;
+package com.ingresse.ingresse.endpoint;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;

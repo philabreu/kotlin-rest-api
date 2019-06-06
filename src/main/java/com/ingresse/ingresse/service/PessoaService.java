@@ -7,19 +7,19 @@ import org.springframework.stereotype.Service;
 
 import com.ingresse.ingresse.model.Pessoa;
 import com.ingresse.ingresse.repository.EntryRepository;
-import com.ingresse.ingresse.repository.PessoaRepository;
+import com.ingresse.ingresse.repository.PersonRepository;
 
 @Service
 public class PessoaService {
 
 	@Autowired
-	private PessoaRepository pessoaRepository;
+	private PersonRepository personRepository;
 	
 	@Autowired
 	private EntryRepository entryRepository;
 
 	public Pessoa buscarPorId(Long id) {
-		Pessoa pessoaBuscada = pessoaRepository.findOne(id);
+		Pessoa pessoaBuscada = personRepository.findOne(id);
 
 		if (pessoaBuscada == null) {
 			throw new EmptyResultDataAccessException(1);
@@ -29,7 +29,7 @@ public class PessoaService {
 	}
 
 	public Pessoa criar(Pessoa pessoa) {
-		return pessoaRepository.save(pessoa);
+		return personRepository.save(pessoa);
 	}
 
 	public Pessoa atualizar(Pessoa pessoa, Long id) {
@@ -37,7 +37,7 @@ public class PessoaService {
 
 		BeanUtils.copyProperties(pessoa, pessoaSalva, "id");
 
-		return pessoaRepository.save(pessoaSalva);
+		return personRepository.save(pessoaSalva);
 	}
 
 	public void remover(Long id) {
@@ -49,10 +49,10 @@ public class PessoaService {
 			}
 		});
 		
-		pessoaRepository.delete(pessoaBuscada);
+		personRepository.delete(pessoaBuscada);
 	}
 
 	public Iterable<Pessoa> listarTodos() {
-		return pessoaRepository.findAll();
+		return personRepository.findAll();
 	}
 }

@@ -1,5 +1,7 @@
 package com.ingresse.ingresse.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -23,7 +25,7 @@ public class CategoryService {
 	@Autowired
 	private EntryRepository entryRepository;
 
-	public Iterable<Category> findAll() {
+	public List<Category> findAll() {
 		LOGGER.debug("calling findAll method in CategoryService:");
 		try {
 			return categoryRepository.findAll();
@@ -75,7 +77,7 @@ public class CategoryService {
 			Category categoriaBuscada = findOne(id);
 			entryRepository.findAll()
 			.stream()
-			.forEach(cadaLancamento -> {
+			.forEach(cadaLancamento->{
 				if (cadaLancamento.getCategory().getId().equals(categoriaBuscada.getId())) {
 					throw new RuntimeException("error.entry.exists");
 				}

@@ -17,7 +17,7 @@ import com.ingresse.ingresse.model.Lancamento;
 public class LancamentoServiceTest {
 
 	@Autowired
-	private LancamentoService lancamentoService;
+	private EntryService entryService;
 
 	@Before
 	public void init() throws Exception {
@@ -26,7 +26,7 @@ public class LancamentoServiceTest {
 
 	@Test
 	public void testListarTodos() {
-		List<Lancamento> lancamentosList = (List<Lancamento>) this.lancamentoService.listarTodos();
+		List<Lancamento> lancamentosList = (List<Lancamento>) this.entryService.findAll();
 
 		Assert.assertNotNull(lancamentosList);
 		Assert.assertTrue(lancamentosList.size() > 0);
@@ -35,7 +35,7 @@ public class LancamentoServiceTest {
 
 	@Test
 	public void testBuscarPorId() {
-		Lancamento lancamento = this.lancamentoService.buscarPorId(7L);
+		Lancamento lancamento = this.entryService.findById(7L);
 
 		Assert.assertNotNull(lancamento);
 		Assert.assertTrue(lancamento.getId() == 7L);
