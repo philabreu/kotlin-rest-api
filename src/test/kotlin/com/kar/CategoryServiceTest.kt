@@ -8,12 +8,9 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.Mockito.*
-import org.mockito.MockitoAnnotations
+import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations.openMocks
 import org.mockito.junit.MockitoJUnitRunner
-import org.springframework.beans.factory.annotation.Autowired
 
 @RunWith(MockitoJUnitRunner::class)
 class CategoryServiceTest {

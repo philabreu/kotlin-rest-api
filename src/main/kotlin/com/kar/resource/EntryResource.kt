@@ -34,7 +34,7 @@ class EntryResource {
     }
 
     @PutMapping("/{id}")
-    fun update(@Valid @RequestBody entry: Entry): Entry{
+    fun update(@Valid @RequestBody entry: Entry): Entry {
         return service.update(entry)
     }
 }

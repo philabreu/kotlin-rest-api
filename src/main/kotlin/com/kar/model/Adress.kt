@@ -12,5 +12,5 @@ data class Adress(
     var city: String,
 
     @get:Size(max = 30)
-    var state: String
+    var state: String,
 )

@@ -21,7 +21,7 @@ data class Person(
     var active: Boolean,
 
     @Embedded
-    var adress: Adress?
+    var adress: Adress?,
 ) {
     @JsonIgnore
     @Transient

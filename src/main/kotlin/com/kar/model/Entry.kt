@@ -20,12 +20,12 @@ data class Entry(
 
     @Column(name = "due_date")
     @field:NotNull
-    @field:JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    @field:JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     var dueDate: LocalDate,
 
     @Column(name = "pay_date")
     @field:NotNull
-    @field:JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    @field:JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     var payDate: LocalDate,
 
     @field:NotNull
@@ -48,5 +48,5 @@ data class Entry(
     @ManyToOne
     @JoinColumn(name = "id_person")
     @field:NotNull
-    var idPerson: Person
+    var idPerson: Person,
 )
