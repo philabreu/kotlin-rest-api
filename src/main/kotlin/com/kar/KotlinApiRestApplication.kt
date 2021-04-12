@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class FinanceiroApplication
+class KotlinApiRestApplication
 
 fun main(args: Array<String>) {
-	runApplication<FinanceiroApplication>(*args)
+	runApplication<KotlinApiRestApplication>(*args)
 }
