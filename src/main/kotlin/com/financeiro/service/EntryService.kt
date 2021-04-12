@@ -70,7 +70,7 @@ class EntryService {
     }
 
     private fun validatePerson(entry: Entry) {
-        var person = personService.findById(entry.idPerson?.id!!)
+        val person = personService.findById(entry.idPerson.id)
 
         if (person.isInactive()) {
             throw RuntimeException("pessoa ${person.name} esta inativa")
