@@ -1,4 +1,4 @@
-package com.financeiro.model
+package com.kar.model
 
 enum class EntryType {
     REVENUE, EXPENSE

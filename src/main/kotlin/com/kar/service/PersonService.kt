@@ -1,8 +1,8 @@
-package com.financeiro.service
+package com.kar.service
 
-import com.financeiro.model.Person
-import com.financeiro.repository.EntryRepository
-import com.financeiro.repository.PersonRepository
+import com.kar.model.Person
+import com.kar.repository.EntryRepository
+import com.kar.repository.PersonRepository
 import org.springframework.beans.BeanUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.dao.DataAccessException

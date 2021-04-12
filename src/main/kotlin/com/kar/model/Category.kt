@@ -1,4 +1,4 @@
-package com.financeiro.model
+package com.kar.model
 
 import javax.persistence.*
 import javax.validation.constraints.NotBlank

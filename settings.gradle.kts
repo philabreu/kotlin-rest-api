@@ -1,1 +1,1 @@
-rootProject.name = "financeiro"
+rootProject.name = "kotlin-api-rest"

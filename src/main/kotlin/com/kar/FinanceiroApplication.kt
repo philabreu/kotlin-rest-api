@@ -1,4 +1,4 @@
-package com.financeiro
+package com.kar
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

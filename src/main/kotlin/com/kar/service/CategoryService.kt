@@ -1,8 +1,8 @@
-package com.financeiro.service
+package com.kar.service
 
-import com.financeiro.model.Category
-import com.financeiro.repository.CategoryRepository
-import com.financeiro.repository.EntryRepository
+import com.kar.model.Category
+import com.kar.repository.CategoryRepository
+import com.kar.repository.EntryRepository
 import org.springframework.beans.BeanUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.dao.DataAccessException

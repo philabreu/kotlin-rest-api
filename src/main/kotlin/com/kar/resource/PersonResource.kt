@@ -1,7 +1,7 @@
-package com.financeiro.resource
+package com.kar.resource
 
-import com.financeiro.model.Person
-import com.financeiro.service.PersonService
+import com.kar.model.Person
+import com.kar.service.PersonService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid

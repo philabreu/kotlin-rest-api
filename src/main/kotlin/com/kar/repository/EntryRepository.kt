@@ -1,6 +1,6 @@
-package com.financeiro.repository
+package com.kar.repository
 
-import com.financeiro.model.Entry
+import com.kar.model.Entry
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

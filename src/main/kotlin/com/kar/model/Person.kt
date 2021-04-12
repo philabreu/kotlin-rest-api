@@ -1,4 +1,4 @@
-package com.financeiro.model
+package com.kar.model
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
