@@ -29,6 +29,7 @@ dependencies {
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("junit:junit:4.13.2")
+	testImplementation("org.mockito:mockito-core:3.8.0")
 }
 
 tasks.withType<KotlinCompile> {
