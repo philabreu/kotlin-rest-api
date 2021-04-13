@@ -29,9 +29,7 @@ class EntryResource {
     }
 
     @DeleteMapping("/{id}")
-    fun delete(@PathVariable id: Long) {
-        service.delete(id)
-    }
+    fun delete(@PathVariable id: Long) = service.delete(id)
 
     @PutMapping("/{id}")
     fun update(@Valid @RequestBody entry: Entry): Entry {
