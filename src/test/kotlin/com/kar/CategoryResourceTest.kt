@@ -45,7 +45,7 @@ class CategoryResourceTest {
     @Test
     @Order(3)
     fun findByIdTest() {
-        val result = trt.getForEntity("/category/{id}", Category::class.java, 19)
+        val result = trt.getForEntity("/category/{id}", Category::class.java, 18)
 
         assertNotNull(result)
         assertEquals(result.statusCode, HttpStatus.OK)
@@ -64,8 +64,8 @@ class CategoryResourceTest {
     @Test
     @Order(5)
     fun deleteTest() {
-        val entity = HttpEntity(Category(19, "delete teste"), null)
-        val result = trt.exchange("/category/{id}", HttpMethod.DELETE, entity, Void::class.java, 19)
+        val entity = HttpEntity(Category(21, "delete teste"), null)
+        val result = trt.exchange("/category/{id}", HttpMethod.DELETE, entity, Void::class.java, 21)
 
         assertNotNull(result)
         assertEquals(result.statusCode, HttpStatus.OK)
