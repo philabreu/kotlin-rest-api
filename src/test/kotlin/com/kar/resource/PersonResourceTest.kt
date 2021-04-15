@@ -1,4 +1,4 @@
-package com.kar
+package com.kar.resource
 
 import com.kar.model.Adress
 import com.kar.model.Person

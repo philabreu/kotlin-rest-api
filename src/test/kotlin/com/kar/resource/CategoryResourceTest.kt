@@ -1,4 +1,4 @@
-package com.kar
+package com.kar.resource
 
 import com.kar.model.Category
 import junit.framework.Assert.assertEquals
@@ -21,7 +21,7 @@ import org.springframework.test.context.junit4.SpringRunner
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CategoryResourceTest {
     @Autowired
-    lateinit var trt: TestRestTemplate
+    private lateinit var trt: TestRestTemplate
 
     @Test
     @Order(1)
