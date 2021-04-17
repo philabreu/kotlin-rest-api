@@ -13,40 +13,40 @@ import javax.validation.constraints.Size
 data class Entry(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    val id: Long,
 
     @field:NotBlank
-    var description: String,
+    val description: String,
 
     @Column(name = "due_date")
     @field:NotNull
     @field:JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    var dueDate: LocalDate,
+    val dueDate: LocalDate,
 
     @Column(name = "pay_date")
     @field:NotNull
     @field:JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    var payDate: LocalDate,
+    val payDate: LocalDate,
 
     @field:NotNull
-    var value: BigDecimal,
+    val value: BigDecimal,
 
     @get:Size(max = 100)
     @field:NotBlank
-    var observation: String,
+    val observation: String,
 
     @Column(name = "entry_type")
     @field:NotNull
     @field:Enumerated(EnumType.STRING)
-    var entryType: EntryType,
+    val entryType: EntryType,
 
     @ManyToOne
     @JoinColumn(name = "id_category")
     @field:NotNull
-    var idCategory: Category,
+    val idCategory: Category,
 
     @ManyToOne
     @JoinColumn(name = "id_person")
     @field:NotNull
-    var idPerson: Person,
+    val idPerson: Person,
 )

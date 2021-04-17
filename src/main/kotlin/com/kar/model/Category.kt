@@ -9,9 +9,9 @@ import javax.validation.constraints.Size
 data class Category(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    val id: Long,
 
     @field:NotBlank
     @get:Size(min = 3, max = 50)
-    var name: String?,
+    val name: String?,
 )

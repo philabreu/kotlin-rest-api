@@ -6,11 +6,12 @@ import javax.validation.constraints.Size
 @Embeddable
 data class Adress(
     @get:Size(max = 30)
-    var district: String,
+    val district: String,
 
     @get:Size(max = 30)
-    var city: String,
+    val city: String,
 
     @get:Size(max = 30)
-    var state: String,
+    val
+    state: String,
 )

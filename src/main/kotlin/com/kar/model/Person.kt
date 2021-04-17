@@ -11,17 +11,17 @@ import javax.validation.constraints.Size
 data class Person(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    val id: Long,
 
     @field:NotBlank
     @get:Size(min = 3, max = 50)
-    var name: String?,
+    val name: String?,
 
     @field:NotNull
-    var active: Boolean,
+    val active: Boolean,
 
     @Embedded
-    var adress: Adress?,
+    val adress: Adress?,
 ) {
     @JsonIgnore
     @Transient

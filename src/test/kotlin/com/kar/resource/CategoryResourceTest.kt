@@ -3,6 +3,7 @@ package com.kar.resource
 import com.kar.model.Category
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertNotNull
+import org.junit.Ignore
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
@@ -16,7 +17,6 @@ import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
 import org.springframework.test.context.junit4.SpringRunner
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CategoryResourceTest {
@@ -24,8 +24,7 @@ class CategoryResourceTest {
     private lateinit var trt: TestRestTemplate
 
     @Test
-    @Order(1)
-    fun saveTest() {
+    fun shouldSaveCategory() {
         val entity = HttpEntity(Category(1, "save category resource"), null)
         val result = trt.postForEntity("/category", entity, Category::class.java)
 
@@ -34,8 +33,7 @@ class CategoryResourceTest {
     }
 
     @Test
-    @Order(2)
-    fun findAllTest() {
+    fun shouldFindAllCategories() {
         val result = trt.getForEntity("/category", List::class.java)
 
         assertNotNull(result)
@@ -43,8 +41,7 @@ class CategoryResourceTest {
     }
 
     @Test
-    @Order(3)
-    fun findByIdTest() {
+    fun shouldFindById() {
         val result = trt.getForEntity("/category/{id}", Category::class.java, 18)
 
         assertNotNull(result)
@@ -52,8 +49,7 @@ class CategoryResourceTest {
     }
 
     @Test
-    @Order(4)
-    fun updateTest() {
+    fun shouldUpdateCategory() {
         val entity = HttpEntity(Category(18, "update teste"), null)
         val result = trt.exchange("/category/{id}", HttpMethod.PUT, entity, Category::class.java, 18)
 
@@ -61,8 +57,7 @@ class CategoryResourceTest {
         assertEquals(result.statusCode, HttpStatus.OK)
     }
 
-    @Test
-    @Order(5)
+    @Ignore("sera refatorado")
     fun deleteTest() {
         val entity = HttpEntity(Category(21, "delete teste"), null)
         val result = trt.exchange("/category/{id}", HttpMethod.DELETE, entity, Void::class.java, 21)
