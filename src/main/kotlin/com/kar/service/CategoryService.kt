@@ -48,14 +48,13 @@ class CategoryService {
         try {
             val category = findById(id)
             entryRepository.findAll()
-                .forEach {
-                    if ((it.idCategory.id) == (category.id)) {
-                        throw RuntimeException(
-                            "nao eh possivel excluir a categoria ${category.name} " +
-                                    "pois pertence a um lançamento"
-                        )
+                    .forEach {
+                        if ((it.idCategory.id) == (category.id)) {
+                            throw RuntimeException(
+                                    "nao eh possivel excluir a categoria ${category.name} pois pertence a um lançamento"
+                            )
+                        }
                     }
-                }
             categoryRepository.delete(category)
         } catch (e: DataAccessException) {
             throw RuntimeException(e.cause?.message)

@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8
+    volumes:
+      - dbvolume:/var/lib/mysql
+    networks:
+      - financeiro
+    ports:
+    - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: financeiro
+      MYSQL_PASSWORD: root
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app:latest
+    links:
+      - db
+    networks:
+      - financeiro
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+
+volumes:
+  dbvolume:
+
+networks:
+  financeiro:
+    driver: bridge
+
+
