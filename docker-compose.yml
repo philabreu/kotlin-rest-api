@@ -2,17 +2,11 @@ version: '3'
 volumes:
   dbvolume:
 
-networks:
-  financeiro:
-    driver: bridge
-
 services:
   db:
     image: mysql:8
     volumes:
       - dbvolume:/var/lib/mysql
-    networks:
-      - financeiro
     ports:
     - 3307:3306
     environment:
@@ -24,12 +18,8 @@ services:
       context: .
       dockerfile: Dockerfile
     image: philabreu/app:latest
-    links:
-      - db
     depends_on:
       - db
-    networks:
-      - financeiro
     ports:
       - 8080:8080
     environment:
